@@ -741,75 +741,31 @@ class _homeState extends State<home> {
                                                     fontFamily: "Outfit-SemiBold",
                                                   ),
                                                 ),
+                                                SizedBox(width:200 ,),
+                                                Padding(
+                                                  padding: const EdgeInsets.all(2.0),
+                                                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                    children: [
+                                                      GestureDetector(
+                                                        onTap: (){
+                                                          _launchGoogleMapsDirections( snapshot.data![Index].latitude!.toDouble(),snapshot.data![Index].longtitude!.toDouble()); //
+                                                        },
+                                                        child: Padding(
+                                                          padding: const EdgeInsets.only(right: 10.0),
+                                                          child: Icon(Icons.directions,color:Colors.green,size: 45,),
+                                                        ),
+                                                      )
+
+                                                    ],
+                                                  ),
+                                                )
                                               ],
                                             ),
                                           ],
                                         ),
                                       ),
 
-                                      Padding(
-                                        padding: const EdgeInsets.all(2.0),
-                                        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Row(children: [
-                                              Padding(
-                                                padding: const EdgeInsets.all(5.0),
-                                                child: Text("   Parking",
-                                                  style:TextStyle(fontSize:14,color: Colors.black,fontWeight: FontWeight.bold,fontFamily: "Outfit-SemiBold"),),
-                                              ),
 
-                                              Padding(
-                                                padding: const EdgeInsets.all(5.0),
-                                                child: Container(
-                                                    height: 25,
-                                                    width:45,
-                                                    decoration: BoxDecoration(color: Colors.white,
-                                                        borderRadius: BorderRadius.circular(5),
-                                                        boxShadow: [
-                                                          BoxShadow(
-                                                            color: Colors.black12,
-                                                            spreadRadius: 0.5,
-                                                            blurRadius: 10,
-                                                            offset: const Offset(0, 7),
-                                                          )
-                                                        ]
-                                                    ),
-                                                    child: Center(child: Icon(Icons.directions_car,color:Colors.red,))),
-                                              ),
-
-                                              Padding(
-                                                padding: const EdgeInsets.all(5.0),
-                                                child: Container(
-                                                    height: 25,
-                                                    width:45,
-                                                    decoration: BoxDecoration(color: Colors.white,
-                                                        borderRadius: BorderRadius.circular(5),
-                                                        boxShadow: [
-                                                          BoxShadow(
-                                                            color: Colors.black12,
-                                                            spreadRadius: 0.5,
-                                                            blurRadius: 10,
-                                                            offset: const Offset(0, 7),
-                                                          )
-                                                        ]
-                                                    ),
-                                                    child: Center(child: Icon(Icons.two_wheeler,color:Colors.green,))),
-                                              ),
-
-                                            ],),
-                                            GestureDetector(
-                                              onTap: (){
-                                                _launchGoogleMapsDirections( snapshot.data![Index].latitude!.toDouble(),snapshot.data![Index].longtitude!.toDouble()); //
-                                              },
-                                              child: Padding(
-                                                padding: const EdgeInsets.only(right: 10.0),
-                                                child: Icon(Icons.directions,color:Colors.green,size: 35,),
-                                              ),
-                                            )
-
-                                          ],
-                                        ),
-                                      )
                                     ],
                                   ),
                                 ),
